@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple Page</title>
+    <style>
+        :root { --bg:#f7f9fc; --card:#fff; --accent:#0066cc; --muted:#6b7280; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+        body { margin:0; background:var(--bg); color:#111; }
+        .container { max-width:900px; margin:40px auto; padding:0 20px; }
+        header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+        .brand { font-weight:700; color:var(--accent); font-size:1.25rem; text-decoration:none; }
+        nav a { color:var(--muted); text-decoration:none; margin-left:14px; font-size:0.95rem; }
+        .hero { background:linear-gradient(180deg, rgba(0,102,204,0.05), transparent); border-radius:10px; padding:28px; margin-top:18px; }
+        .hero h1 { margin:0 0 6px 0; font-size:1.6rem; }
+        .hero p { margin:0; color:var(--muted); }
+        .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:20px; }
+        .card { background:var(--card); border-radius:8px; padding:16px; box-shadow:0 1px 4px rgba(16,24,40,0.05); }
+        footer { margin-top:28px; padding:18px 0; text-align:center; color:var(--muted); font-size:0.9rem; }
+        a.button { display:inline-block; margin-top:12px; padding:8px 12px; background:var(--accent); color:#fff; border-radius:6px; text-decoration:none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a class="brand" href="#">My Simple Site</a>
+            <nav aria-label="Main navigation">
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" role="region" aria-labelledby="hero-heading">
+                <h1 id="hero-heading">A Minimal Starter Page</h1>
+                <p>Clean, responsive HTML with a touch of styling. Use this as the basis for a small site or prototype.</p>
+                <a class="button" href="#features">Get started</a>
+            </section>
+
+            <section id="features" class="grid" aria-label="Features">
+                <article class="card">
+                    <h3>Responsive</h3>
+                    <p style="color:var(--muted); margin-top:6px;">Layouts adapt to different screen sizes using simple CSS grid rules.</p>
+                </article>
+                <article class="card">
+                    <h3>Accessible</h3>
+                    <p style="color:var(--muted); margin-top:6px;">Semantic elements and ARIA attributes improve usability for assistive tech.</p>
+                </article>
+                <article class="card">
+                    <h3>Lightweight</h3>
+                    <p style="color:var(--muted); margin-top:6px;">No external dependencies — easy to extend and deploy.</p>
+                </article>
+            </section>
+
+            <section id="about" class="card" style="margin-top:18px;">
+                <h2>About</h2>
+                <p style="color:var(--muted); margin-top:6px;">This file is a compact starting point for a public-facing page. Modify styles and content as needed.</p>
+            </section>
+        </main>
+
+        <footer>
+            <div id="copyright">© <span id="year"></span> Simple Site</div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
